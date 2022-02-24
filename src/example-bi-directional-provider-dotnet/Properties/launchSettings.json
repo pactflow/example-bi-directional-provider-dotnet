@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json"
+  
+  "profiles": {
+   
+    "example_bi_directional_provider_dotnet": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "products",
+      "applicationUrl": "http://localhost:9000;http://localhost:9001",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
