@@ -3,7 +3,7 @@ name: Trigger update to docs
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - "**.md"
 
