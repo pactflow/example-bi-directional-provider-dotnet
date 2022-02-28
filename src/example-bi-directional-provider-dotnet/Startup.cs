@@ -24,6 +24,8 @@ namespace example_bi_directional_provider_dotnet.core
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProviderExample.Api", Version = "v1" });
             });
+            services.Configure<ConsoleLifetimeOptions>(options =>  // configure the options
+               options.SuppressStatusMessages = true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
