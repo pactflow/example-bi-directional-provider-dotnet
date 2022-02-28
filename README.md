@@ -1,1 +1,1 @@
-# example-bi-directional-provider-dotnet
+# Example .NET Schemathesis Provider
