@@ -1,0 +1,23 @@
+======================= Schemathesis test session starts =======================
+platform Linux -- Python 3.9.10, schemathesis-3.13.3, hypothesis-6.37.0, hypothesis_jsonschema-0.22.0, jsonschema-4.4.0
+rootdir: /app
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/app/.hypothesis/examples')
+Schema location: http://host.docker.internal:9000/swagger/v1/swagger.json
+Base URL: http://host.docker.internal:9000/
+Specification version: Open API 3.0.1
+Workers: 1
+Collected API operations: 2
+
+GET /Products .                                                           [ 50%]
+GET /Products/{id} .                                                      [100%]
+
+=================================== SUMMARY ====================================
+
+Performed checks:
+    not_a_server_error                              101 / 101 passed          PASSED 
+    status_code_conformance                         101 / 101 passed          PASSED 
+    content_type_conformance                        101 / 101 passed          PASSED 
+    response_headers_conformance                    101 / 101 passed          PASSED 
+    response_schema_conformance                     101 / 101 passed          PASSED 
+
+============================== 2 passed in 3.69s ===============================

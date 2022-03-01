@@ -34,10 +34,9 @@ namespace example_bi_directional_provider_dotnet.core
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI();
             }
-
+            app.UseSwagger();
+            app.UseSwaggerUI();
             app.UseRouting();
 
             app.UseAuthorization();

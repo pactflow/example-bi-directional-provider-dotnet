@@ -12,9 +12,11 @@
   <ItemGroup>
     <None Remove="Model\" />
     <None Remove="Swashbuckle.AspNetCore" />
+    <None Remove="scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="scripts\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />

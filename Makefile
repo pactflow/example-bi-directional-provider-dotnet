@@ -2,7 +2,7 @@
 # We often use them for demos and workshops, and Makefiles allow us to provide a consistent language and platform agnostic interface
 # for each project. You do not need to use Makefiles to use Pact in your own project!
 
-PACTICIPANT := "pactflow-example-provider-dredd"
+PACTICIPANT := "pactflow-example-bi-directional-provider-dotnet"
 GITHUB_REPO := "pactflow-example-bi-directional-provider-dotnet"
 PACT_CHANGED_WEBHOOK_UUID := "c76b601e-d66a-4eb1-88a4-6ebc50c0df8b" # TODO needed? Or is this just for consumers
 PACT_CLI="docker run --rm -v ${PWD}:${PWD} -e PACT_BROKER_BASE_URL -e PACT_BROKER_TOKEN pactfoundation/pact-cli:latest"
@@ -20,6 +20,12 @@ all: test
 ## CI tasks
 ## ====================
 
+publish_dll:
+	dotnet src/example-bi-directional-provider-dotnet/bin/Debug/netcoreapp3.1/example-bi-directional-provider-dotnet.dll
+
+verify_swagger: 
+	./src/scripts/verify_swagger.sh
+
 ci:
 	@if make test; then \
 		make publish_and_deploy; \
@@ -36,13 +42,13 @@ tag_as_dev:
 		--auto-create-version \
 	  --tag master
 
-publish_contract: .env tag_as_dev
+publish_contract:
 	@echo "\n========== STAGE: publish contract + results (success) ==========\n"
-	npm run test:publish -- true
+	./src/example-bi-directional-provider-dotnet/scripts/publish.sh true
 
-publish_failure: .env tag_as_dev
+publish_failure:
 	@echo "\n========== STAGE: publish contract + results (failure) ==========\n"
-	npm run test:publish -- false
+	./src/example-bi-directional-provider-dotnet/scripts/publish.sh false
 
 # Run the ci target from a developer machine with the environment variables
 # set as if it was on Github Actions.
@@ -70,7 +76,7 @@ fake_ci_webhook:
 
 test: .env
 	@echo "\n========== STAGE: test ✅ ==========\n"
-	npm run test
+	verify_swagger
 
 ## =====================
 ## Deploy tasks
