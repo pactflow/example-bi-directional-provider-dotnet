@@ -21,10 +21,10 @@ all: test
 ## ====================
 
 publish_dll:
-	dotnet src/example-bi-directional-provider-dotnet/bin/Debug/netcoreapp3.1/example-bi-directional-provider-dotnet.dll
+	dotnet publish src/example-bi-directional-provider-dotnet.sln
 
 verify_swagger: 
-	./src/scripts/verify_swagger.sh
+	./src/example-bi-directional-provider-dotnet/scripts/verify_swagger.sh
 
 ci:
 	@if make test; then \
@@ -74,9 +74,9 @@ fake_ci_webhook:
 ## Build/test tasks
 ## =====================
 
-test: .env
-	@echo "\n========== STAGE: test ✅ ==========\n"
-	verify_swagger
+test:
+	@echo "\n========== STAGE: test ==========\n"
+	./src/example-bi-directional-provider-dotnet/scripts/verify_swagger.sh
 
 ## =====================
 ## Deploy tasks
