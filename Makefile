@@ -42,11 +42,11 @@ tag_as_dev:
 		--auto-create-version \
 	  --tag master
 
-publish_contract:
+publish_contract: tag_as_dev 
 	@echo "\n========== STAGE: publish contract + results (success) ==========\n"
 	./src/example-bi-directional-provider-dotnet/scripts/publish.sh true
 
-publish_failure:
+publish_failure: tag_as_dev 
 	@echo "\n========== STAGE: publish contract + results (failure) ==========\n"
 	./src/example-bi-directional-provider-dotnet/scripts/publish.sh false
 
@@ -89,7 +89,7 @@ no_deploy:
 
 can_i_deploy: .env
 	@echo "\n========== STAGE: can-i-deploy? 🌉 ==========\n"
-	"${PACT_CLI}" broker can-i-deploy --pacticipant ${PACTICIPANT} --version ${GIT_COMMIT} --to-environment production
+	"${PACT_CLI}" broker can-i-deploy --pacticipant ${PACTICIPANT} --version  ${GIT_COMMIT} --to-environment production
 
 deploy_app:
 	@echo "\n========== STAGE: deploy 🚀 ==========\n"
