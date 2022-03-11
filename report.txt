@@ -20,4 +20,4 @@ Performed checks:
     response_headers_conformance                    101 / 101 passed          PASSED 
     response_schema_conformance                     101 / 101 passed          PASSED 
 
-============================== 2 passed in 3.69s ===============================
+============================== 2 passed in 3.75s ===============================

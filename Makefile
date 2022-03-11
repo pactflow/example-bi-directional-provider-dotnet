@@ -5,10 +5,10 @@
 PACTICIPANT := "pactflow-example-bi-directional-provider-dotnet"
 GITHUB_REPO := "pactflow-example-bi-directional-provider-dotnet"
 PACT_CHANGED_WEBHOOK_UUID := "c76b601e-d66a-4eb1-88a4-6ebc50c0df8b" # TODO needed? Or is this just for consumers
-PACT_CLI="docker run --rm -v /C/Users/Candy/Documents/Pactflow/example-bi-directional-provider-dotnet:/C/Users/Candy/Documents/Pactflow/example-bi-directional-provider-dotnet -e PACT_BROKER_BASE_URL -e PACT_BROKER_TOKEN pactfoundation/pact-cli:latestm"
+PACT_CLI="docker run --rm -v ${PWD}:${PWD} -e PACT_BROKER_BASE_URL -e PACT_BROKER_TOKEN pactfoundation/pact-cli:latest"
 
-# Only deploy from master
-ifeq ($(GIT_BRANCH),master)
+# Only deploy from main
+ifeq ($(GIT_BRANCH),main)
 	DEPLOY_TARGET=deploy
 else
 	DEPLOY_TARGET=no_deploy
@@ -40,13 +40,13 @@ tag_as_dev:
 	  --pacticipant ${PACTICIPANT} \
 	  --version ${GIT_COMMIT} \
 		--auto-create-version \
-	  --tag master
+	  --tag main
 
 publish_contract:
 	@echo "\n========== STAGE: publish contract + results (success) ==========\n"
 	./example-bi-directional-provider-dotnet/scripts/publish.sh true
 
-publish_failure:
+
 	@echo "\n========== STAGE: publish contract + results (failure) ==========\n"
 	./example-bi-directional-provider-dotnet/scripts/publish.sh false
 
@@ -86,7 +86,7 @@ test:
 deploy: deploy_app record_deployment
 
 no_deploy:
-	@echo "Not deploying as not on master branch"
+	@echo "Not deploying as not on main branch"
 
 can_i_deploy: .env
 	@echo "\n========== STAGE: can-i-deploy? 🌉 ==========\n"

@@ -13,7 +13,7 @@ curl \
   -X PUT \
   -H "Authorization: Bearer ${PACT_BROKER_TOKEN}" \
   -H "Content-Type: application/json" \
-  "${PACT_BROKER_BASE_URL}/contracts/provider/pactflow-example-bi-directional-provider-dotnet/version/sfdfdfgdrwer" \
+  "${PACT_BROKER_BASE_URL}/contracts/provider/pactflow-example-bi-directional-provider-dotnet/version/${GIT_COMMIT}" \
   -d '{
    "content": "'$OAS'",
    "contractType": "oas",
