@@ -5,7 +5,7 @@
 PACTICIPANT := "pactflow-example-bi-directional-provider-dotnet"
 GITHUB_REPO := "pactflow-example-bi-directional-provider-dotnet"
 PACT_CHANGED_WEBHOOK_UUID := "c76b601e-d66a-4eb1-88a4-6ebc50c0df8b" # TODO needed? Or is this just for consumers
-PACT_CLI="docker run --rm -v ${PWD}:${PWD} -e PACT_BROKER_BASE_URL -e PACT_BROKER_TOKEN pactfoundation/pact-cli:latest"
+PACT_CLI="docker run --rm -v /C/Users/Candy/Documents/Pactflow/example-bi-directional-provider-dotnet:/C/Users/Candy/Documents/Pactflow/example-bi-directional-provider-dotnet -e PACT_BROKER_BASE_URL -e PACT_BROKER_TOKEN pactfoundation/pact-cli:latestm"
 
 # Only deploy from master
 ifeq ($(GIT_BRANCH),master)
@@ -21,10 +21,10 @@ all: test
 ## ====================
 
 publish_dll:
-	dotnet publish src/example-bi-directional-provider-dotnet.sln
+	dotnet publish example-bi-directional-provider-dotnet.sln
 
 verify_swagger: 
-	./src/example-bi-directional-provider-dotnet/scripts/verify_swagger.sh
+	./example-bi-directional-provider-dotnet/scripts/verify_swagger.sh
 
 ci:
 	@if make test; then \
@@ -44,11 +44,11 @@ tag_as_dev:
 
 publish_contract:
 	@echo "\n========== STAGE: publish contract + results (success) ==========\n"
-	./src/example-bi-directional-provider-dotnet/scripts/publish.sh true
+	./example-bi-directional-provider-dotnet/scripts/publish.sh true
 
 publish_failure:
 	@echo "\n========== STAGE: publish contract + results (failure) ==========\n"
-	./src/example-bi-directional-provider-dotnet/scripts/publish.sh false
+	./example-bi-directional-provider-dotnet/scripts/publish.sh false
 
 # Run the ci target from a developer machine with the environment variables
 # set as if it was on Github Actions.
@@ -76,7 +76,8 @@ fake_ci_webhook:
 
 test:
 	@echo "\n========== STAGE: test ==========\n"
-	./src/example-bi-directional-provider-dotnet/scripts/verify_swagger.sh
+	./example-bi-directional-provider-dotnet/scripts/verify_swagger.sh
+
 
 ## =====================
 ## Deploy tasks
