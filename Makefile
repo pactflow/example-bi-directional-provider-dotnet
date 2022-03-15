@@ -21,10 +21,10 @@ all: test
 ## ====================
 
 publish_dll:
-	dotnet publish src/example-bi-directional-provider-dotnet.sln
+	dotnet publish example-bi-directional-provider-dotnet.sln
 
 verify_swagger: 
-	./src/example-bi-directional-provider-dotnet/scripts/verify_swagger.sh
+	./example-bi-directional-provider-dotnet/scripts/verify_swagger.sh
 
 ci:
 	@if make test; then \
@@ -44,11 +44,11 @@ tag_as_dev:
 
 publish_contract:
 	@echo "\n========== STAGE: publish contract + results (success) ==========\n"
-	./src/example-bi-directional-provider-dotnet/scripts/publish.sh true
+	./example-bi-directional-provider-dotnet/scripts/publish.sh true
 
 
 	@echo "\n========== STAGE: publish contract + results (failure) ==========\n"
-	./src/example-bi-directional-provider-dotnet/scripts/publish.sh false
+	./example-bi-directional-provider-dotnet/scripts/publish.sh false
 
 # Run the ci target from a developer machine with the environment variables
 # set as if it was on Github Actions.
@@ -76,7 +76,8 @@ fake_ci_webhook:
 
 test:
 	@echo "\n========== STAGE: test ==========\n"
-	./src/example-bi-directional-provider-dotnet/scripts/verify_swagger.sh
+	./example-bi-directional-provider-dotnet/scripts/verify_swagger.sh
+
 
 ## =====================
 ## Deploy tasks

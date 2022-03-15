@@ -5,9 +5,8 @@ if [ "${1}" != true ]; then
 	SUCCESS=false
 fi
 
-OAS=$(cat src/example-bi-directional-provider-dotnet/swagger.json | base64)
+OAS=$(cat example-bi-directional-provider-dotnet/swagger.json | base64)
 REPORT=$(cat report.txt | base64)
-
 
 echo "==> Uploading OAS to Pactflow"
 curl \
