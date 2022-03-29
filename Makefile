@@ -46,7 +46,7 @@ publish_contract:
 	@echo "\n========== STAGE: publish contract + results (success) ==========\n"
 	./example-bi-directional-provider-dotnet/scripts/publish.sh true
 
-
+publish_failure:
 	@echo "\n========== STAGE: publish contract + results (failure) ==========\n"
 	./example-bi-directional-provider-dotnet/scripts/publish.sh false
 
