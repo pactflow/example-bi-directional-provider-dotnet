@@ -31,7 +31,7 @@ To be able to run some of the commands locally, you will need to export the foll
 
 ### Publish example to your Pactflow
 
-To publish this example to your own Pactflow account and view it in the UI follow these steps, note these instructions are for UNIX based OS's (Linux / Mac / Windows via WSL only) - See ### Using Example on Windows.
+To publish this example to your own Pactflow account and view it in the UI follow these steps, note these instructions are for UNIX based OS's (Linux / Mac / Windows via WSL only) - See [Using Example on Windows](#using-example-on-windows)
 
 1. Make sure you have completed the pre-requisite steps of setting up your Pactflow account, and setting the environment variables `PACT_BROKER_TOKEN` and `PACT_BROKER_BASE_URL` with the token and URL from your Pactflow account. These environment variables are what is used in the Makefile simulated build pipeline process to determine which Pactflow instance to publish to.
 
@@ -49,7 +49,7 @@ To publish this example to your own Pactflow account and view it in the UI follo
 * `make test` - run the tests locally
 * `make fake_ci` - run the CI process locally, this will publish the Swagger document and Shchemathesis report to Pactflow.
  
-### Using Example on Windows.
+### Using Example on Windows
 To run this example on Windows, we will use Powershell and run the commands defined in the Makefile, manually.
 
 We will take you through the steps, but you can see the commands in the `./Makefile`
