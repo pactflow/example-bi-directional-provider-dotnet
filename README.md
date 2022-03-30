@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/pactflow/example-bi-directional-provider-dotnet/actions/workflows/build.yml/badge.svg)](https://github.com/pactflow/example-bi-directional-provider-dotnet/actions)
 
-[![Can I deploy Status](https://testdemo.pactflow.io/pacticipants/pactflow-example-bi-directional-provider-dotnet/branches/main/latest-version/can-i-deploy/to-environment/production/badge)](https://testdemo.pactflow.io/pacticipants/pactflow-example-bi-directional-provider-dotnet/branches/main/latest-version/can-i-deploy/to-environment/production/badge)
+[![Can I deploy Status](https://testdemo.pactflow.io/pacticipants/pactflow-example-bi-directional-provider-dotnet/branches/main/latest-version/can-i-deploy/to-environment/production/badge.svg)](https://testdemo.pactflow.io/pacticipants/pactflow-example-bi-directional-provider-dotnet/branches/main/latest-version/can-i-deploy/to-environment/production/badge)
 
 [![pactflow-example-bi-directional-provider-dotnet/pactflow-example-bi-directional-consumer-dotnet](https://testdemo.pactflow.io/pacts/provider/pactflow-example-bi-directional-provider-dotnet/consumer/pactflow-example-bi-directional-consumer-dotnet/latest/main/badge.svg)](https://testdemo.pactflow.io/pacts/provider/pactflow-example-bi-directional-provider-dotnet/consumer/pactflow-example-bi-directional-consumer-dotnet/latest/main)
 
