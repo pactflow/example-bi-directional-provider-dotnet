@@ -35,18 +35,18 @@ ci:
 
 publish_and_deploy: publish_contract can_i_deploy $(DEPLOY_TARGET)
 
-tag_as_dev:
+tag:
 	@"${PACT_CLI}" broker create-version-tag \
 	  --pacticipant ${PACTICIPANT} \
 	  --version ${GIT_COMMIT} \
 		--auto-create-version \
-	  --tag main
+	  --tag ${GIT_BRANCH}
 
-publish_contract:
+publish_contract: .env tag
 	@echo "\n========== STAGE: publish contract + results (success) ==========\n"
 	./example-bi-directional-provider-dotnet/scripts/publish.sh true
 
-publish_failure:
+publish_failure: .env tag
 	@echo "\n========== STAGE: publish contract + results (failure) ==========\n"
 	./example-bi-directional-provider-dotnet/scripts/publish.sh false
 
