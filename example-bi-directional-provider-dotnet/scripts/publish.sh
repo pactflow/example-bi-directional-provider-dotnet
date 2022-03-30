@@ -5,8 +5,17 @@ if [ "${1}" != true ]; then
 	SUCCESS=false
 fi
 
-OAS=$(cat example-bi-directional-provider-dotnet/swagger.json | base64)
-REPORT=$(cat report.txt | base64)
+# Avoid breaking for users who don't have GNU base64 command
+# https://github.com/pactflow/example-provider-restassured/pull/1
+# keep base64 encoded content in one line 
+if ! command -v base64 -w 0 &> /dev/null
+then
+    OAS=$(cat example-bi-directional-provider-dotnet/swagger.json | base64)
+    REPORT=$(cat report.txt | base64)
+else
+    OAS=$(cat example-bi-directional-provider-dotnet/swagger.json | base64 -w 0)
+    REPORT=$(cat report.txt | base64 -w 0)
+fi
 
 echo "==> Uploading OAS to Pactflow"
 curl \
