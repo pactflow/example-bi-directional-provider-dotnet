@@ -1,8 +1,14 @@
 # Example .NET Schemathesis Provider
 
-[![Build Status](https://travis-ci.com/pactflow/example-provider-restassured.svg?branch=master)](https://travis-ci.com/pactflow/example-provider-restassured)
+[![Build Status](https://github.com/pactflow/example-bi-directional-provider-dotnet/actions/workflows/build.yml/badge.svg)](https://github.com/pactflow/example-bi-directional-provider-dotnet/actions)
+
+[![Can I deploy Status](https://testdemo.pactflow.io/pacticipants/pactflow-example-bi-directional-provider-dotnet/branches/master/latest-version/can-i-deploy/to-environment/production/badge)](https://testdemo.pactflow.io/pacticipants/pactflow-example-provider-postman/branches/master/latest-version/can-i-deploy/to-environment/production/badge)
+
+[![pactflow-example-bi-directional-provider-dotnet/pactflow-example-bi-directional-consumer-dotnet](https://testdemo.pactflow.io/pacts/provider/pactflow-example-bi-directional-provider-dotnet/consumer/pactflow-example-bi-directional-consumer-dotnet/latest/master/badge.svg)](https://testdemo.pactflow.io/pacts/provider/pactflow-example-bi-directional-provider-dotnet/consumer/pactflow-example-bi-directional-consumer-dotnet/latest/master)
 
 This is an example of a .NET core API provider that uses [Pactflow](https://pactflow.io) and its [bi-directional contracts feature](https://pactflow.io/blog/bi-directional-contracts/) to ensure that it is compatible with the expectations its consumers have of it. This example uses [Swashbuckle](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-6.0&tabs=visual-studio) to generate a Swagger document, and [Schemathesis](https://github.com/schemathesis/schemathesis) to verify the Swagger document against the endpoints available.
+
+It is using a public tenant on Pactflow, which you can access [here](https://testdemo.pactflow.io/) using the credentials `dXfltyFMgNOFZAxr8io9wJ37iUpY42M`/`O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1`. The latest version of the Example Pactflow Consumer (.NET) /Example Pactflow Provider (.NET) pact is published [here](https://testdemo.pactflow.io/overview/provider/pactflow-example-bi-directional-provider-dotnet/consumer/pactflow-example-bi-directional-consumer-dotnet).
 
 The project uses a Makefile to simulate a very simple build pipeline with two stages - test and deploy.
 
