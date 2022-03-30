@@ -24,6 +24,8 @@ jobs:
         uses: actions/setup-dotnet@v1.7.2
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
+      - name: install
+        run: make publish_dll
       - name: CI
         run: GIT_BRANCH=${GITHUB_REF:11} make ci
 
