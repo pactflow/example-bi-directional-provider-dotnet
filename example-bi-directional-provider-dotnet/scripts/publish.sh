@@ -11,11 +11,11 @@ fi
 if ! command -v base64 -w 0 &> /dev/null
 then
     OAS=$(cat example-bi-directional-provider-dotnet/swagger.json | base64)
+    REPORT=$(cat report.txt | base64)
 else
     OAS=$(cat example-bi-directional-provider-dotnet/swagger.json | base64 -w 0)
+    REPORT=$(cat report.txt | base64 -w 0)
 fi
-
-REPORT=$(cat report.txt | base64)
 
 echo "==> Uploading OAS to Pactflow"
 curl \
