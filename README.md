@@ -16,7 +16,7 @@
     - [Environment variables](#environment-variables)
   - [Usage](#usage)
     - [Steps](#steps)
-    - [Use case with <Tool>](#use-case-with-tool)
+    - [Use case with Schemathesis](#use-case-with-schemathesis)
   - [OS/Platform specific considerations](#osplatform-specific-considerations)
     - [Windows](#windows)
   - [Caveats](#caveats)
@@ -110,10 +110,10 @@ To be able to run some of the commands locally, you will need to export the foll
 
       `make publish_contract`
 
-### Use case with <Tool>
+### Use case with Schemathesis
 
 * `make test` - run the tests locally
-* `make fake_ci` - run the CI process (the above steps) locally, this will publish the Swagger document and Shchemathesis report to Pactflow.
+* `make fake_ci` - run the CI process (the above steps) locally, this will publish the Swagger document and Schemathesis report to Pactflow.
 
 ## OS/Platform specific considerations
 
