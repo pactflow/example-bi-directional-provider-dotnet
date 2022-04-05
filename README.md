@@ -28,7 +28,7 @@
 
 <!-- Provider Overview -->
 
-This is an example of a <language> "Product" API Provider that uses <tool>, Pact, [Pactflow](https://pactflow.io) and GitHub Actions to generate and publish Pact provider contracts.
+This is an example of a .NET "Product" API Provider that uses Schemathesis, Pact, [Pactflow](https://pactflow.io) and GitHub Actions to generate and publish Pact provider contracts.
 
 It performs pre-deployment cross-compatability checks to ensure that it is compatible with specified consumers using the Bi-Directional contract capability of Pactflow.
 
@@ -58,7 +58,6 @@ When you run the CI pipeline (see below for doing this), the pipeline should per
 * Deploy (only from <main|master>)
   * Deploy app to Production
   * Record the Production deployment in the Pact Broker
-  * 
 
 ![Provider Pipeline](docs/provider-pipeline.png "Provider Pipeline")
 
@@ -75,7 +74,7 @@ This project is currently compatible with the following consumers(s):
 * [pactflow-example-bi-directional-consumer-mountebank](https://github.com/pactflow/example-bi-directional-consumer-mountebank) -->
 * [pactflow-example-bi-directional-consumer-dotnet](https://github.com/pactflow/example-bi-directional-consumer-dotnet)
 
-See [Environment variables](#environment-variables) on how to set these up
+<!-- See [Environment variables](#environment-variables) on how to set these up -->
 
   
 ## Pre-requisites
