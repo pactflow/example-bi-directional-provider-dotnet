@@ -33,10 +33,10 @@ ci:
 	fi; \
 
 create_branch_version:
-	PACTICIPANT=${PACTICIPANT} ./example-bi-directional-provider-dotnet/scripts/scripts/create_branch_version.sh
+	PACTICIPANT=${PACTICIPANT} ./example-bi-directional-provider-dotnet/scripts/create_branch_version.sh
 
 create_version_tag:
-	PACTICIPANT=${PACTICIPANT} ./example-bi-directional-provider-dotnet/scripts/scripts/create_version_tag.sh
+	PACTICIPANT=${PACTICIPANT} ./example-bi-directional-provider-dotnet/scripts/create_version_tag.sh
 
 publish_success: .env create_version_tag
 	@echo "\n========== STAGE: publish contract + results (success) ==========\n"
