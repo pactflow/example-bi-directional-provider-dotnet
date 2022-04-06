@@ -6,7 +6,7 @@ if [ "${1}" != true ]; then
 fi
 
 # Avoid breaking for users who don't have GNU base64 command
-# https://github.com/pactflow/example-provider-restassured/pull/1
+# https://github.com/pactflow/example-bi-directional-provider-restassured/pull/1
 # keep base64 encoded content in one line 
 if ! command -v base64 -w 0 &> /dev/null
 then
