@@ -51,6 +51,7 @@ ci:
 	fi; \
 
 publish_provider_contract:
+	git status;
 	@echo "\n========== STAGE: publish-provider-contract (spec + results) ==========\n"
 	${PACTFLOW_CLI_COMMAND} publish-provider-contract \
       ${OAS_PATH} \
