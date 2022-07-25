@@ -7,7 +7,9 @@
   "paths": {
     "/Products": {
       "get": {
-        "tags": ["Products"],
+        "tags": [
+          "Products"
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -43,7 +45,9 @@
     },
     "/Products/{id}": {
       "get": {
-        "tags": ["Products"],
+        "tags": [
+          "Products"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -100,7 +104,8 @@
             "type": "string",
             "nullable": true
           }
-        }
+        },
+        "additionalProperties": false
       }
     }
   }
