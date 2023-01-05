@@ -27,13 +27,13 @@
 
 <!-- Provider Overview -->
 
-This is an example of a .NET "Product" API Provider that uses Schemathesis, Pact, [Pactflow](https://pactflow.io) and GitHub Actions to generate and publish Pact provider contracts.
+This is an example of a .NET "Product" API Provider that uses Schemathesis, Pact, [PactFlow](https://pactflow.io) and GitHub Actions to generate and publish Pact provider contracts.
 
 It performs pre-deployment cross-compatability checks to ensure that it is compatible with specified consumers using the Bi-Directional contract capability of Pactflow.
 
 <!-- General -->
 
-See the full [Pactflow Bi-Directional Workshop](https://docs.pactflow.io/docs/workshops/bi-directional-contract-testing) for which this can be substituted in as the "provider".
+See the full [PactFlow Bi-Directional Workshop](https://docs.pactflow.io/docs/workshops/bi-directional-contract-testing) for which this can be substituted in as the "provider".
 
 ## Overview of Part of Bi-Directional Contract Testing Flow
 
