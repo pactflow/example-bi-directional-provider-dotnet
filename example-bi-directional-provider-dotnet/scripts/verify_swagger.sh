@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotnet example-bi-directional-provider-dotnet/bin/Debug/netcoreapp3.1/example-bi-directional-provider-dotnet.dll &
+dotnet example-bi-directional-provider-dotnet/bin/Debug/netcoreapp6.0/example-bi-directional-provider-dotnet.dll &
 API_PID=$!
 
 
