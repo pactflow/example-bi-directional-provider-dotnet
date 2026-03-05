@@ -2,7 +2,7 @@
     <Target Name="SwaggerPostBuildTarget" AfterTargets="Build">
         <Exec Command="dotnet tool restore"></Exec>
         <!-- DOTNET_ROLL_FORWARD=Major allows the swashbuckle CLI (targeting net9) to run on the net10 SDK -->
-        <Exec Command="dotnet tool run swagger tofile --output swagger.json  bin/Release/net10.0/example-bi-directional-provider-dotnet.dll v1"
+        <Exec Command="dotnet tool run swagger tofile --output swagger.json $(TargetPath) v1"
               EnvironmentVariables="DOTNET_ROLL_FORWARD=Major" />
     </Target>
   <PropertyGroup>
@@ -22,8 +22,5 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.4" />
-    <!-- Pin Microsoft.OpenApi to 1.x: Swashbuckle 7.x uses a >= 1.6.18 range with no upper bound,
-         which allowed NuGet to resolve to the breaking 2.0.0 release. Models namespace moved in 2.x. -->
-    <PackageReference Include="Microsoft.OpenApi" Version="[1.6.22,3.3.1]" />
   </ItemGroup>
 </Project>
