@@ -21,7 +21,7 @@
     <Folder Include="scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.3.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.4" />
     <!-- Pin Microsoft.OpenApi to 1.x: Swashbuckle 7.x uses a >= 1.6.18 range with no upper bound,
          which allowed NuGet to resolve to the breaking 2.0.0 release. Models namespace moved in 2.x. -->
     <PackageReference Include="Microsoft.OpenApi" Version="[1.6.22,3.3.1]" />
